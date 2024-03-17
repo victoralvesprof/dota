@@ -1,7 +1,5 @@
 # Dota
 
-# Dota API Consumer with Nx
-
 Este projeto é uma aplicação desenvolvida utilizando a poderosa suíte de ferramentas Nx, destinada a consumir e exibir dados das APIs do Dota, com o objetivo de aprender e demonstrar o uso eficaz do Nx em um contexto de desenvolvimento real.
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

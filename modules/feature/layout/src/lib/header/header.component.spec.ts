@@ -22,6 +22,13 @@ describe('HeaderComponent', () => {
   it('should render title', () => {
     const header: HTMLHeadingElement =
       fixture.nativeElement.querySelector('header');
-    expect(header.textContent).toBe('Dota');
+
+    expect(header.textContent).toBe(component.title);
+
+    component.title = 'leagueoflegends';
+
+    fixture.detectChanges();
+
+    expect(header.textContent).toBe(component.title);
   });
 });

@@ -10,5 +10,5 @@ import { LayoutModule } from 'layout';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'dota';
+  title = 'Dota';
 }

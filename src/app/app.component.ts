@@ -4,14 +4,11 @@ import { LayoutModule } from 'layout';
 
 @Component({
   standalone: true,
-  imports: [
-    RouterModule,
-    LayoutModule
-  ],
+  imports: [RouterModule, LayoutModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'dota';
+  title = 'Dota';
 }

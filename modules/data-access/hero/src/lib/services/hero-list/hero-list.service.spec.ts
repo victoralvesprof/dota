@@ -5,8 +5,8 @@ import {
 } from '@angular/common/http/testing';
 
 import { HeroListService } from './hero-list.service';
-import { Hero } from '../models/hero.model';
-import { mockHeroes } from '../mocks/heroes.mock';
+import { Hero } from '../../models/hero.model';
+import { mockHeroes } from '../../mocks/heroes.mock';
 
 describe('HeroListService', () => {
   let service: HeroListService;

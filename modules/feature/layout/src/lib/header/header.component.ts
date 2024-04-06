@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input({ required: true }) title = '';
+  @Input({ required: true }) titleHeader = '';
+  @Input({ required: true }) type = '';
 }

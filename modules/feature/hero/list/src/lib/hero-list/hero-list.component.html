@@ -5,7 +5,7 @@
     matSort
     #sort="matSort"
     [dataSource]="dataSource"
-    class="user-table"
+    class="hero-table"
     role="grid"
     aria-describedby="tableInfo"
   >
@@ -25,7 +25,22 @@
         *matCellDef="let element; let index = $index"
         [tabindex]="index + 1"
       >
-        {{ element[column.dataKey] }}
+        <ng-container
+          *ngIf="element[column.dataKey].includes('.png'); else default"
+        >
+          <img
+            priority
+            width="100"
+            height="100"
+            class="img-round img-full"
+            mat-card-image
+            [ngSrc]="element[column.dataKey]"
+            [attr.alt]="element[column.title]"
+          />
+        </ng-container>
+        <ng-template #default>
+          {{ element[column.dataKey] }}
+        </ng-template>
       </td>
     </ng-container>
 

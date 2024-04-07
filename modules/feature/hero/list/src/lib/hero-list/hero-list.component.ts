@@ -6,7 +6,8 @@ import {
   OnInit,
   DestroyRef,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, provideImgixLoader } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -14,8 +15,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 
-import { DATATABLE, DATATABLEKEY } from '../constant/hero-list.const';
+import {
+  DATATABLE,
+  DATATABLEKEY,
+  URL_BASE_IMAGES,
+} from '../constant/hero-list.const';
 import { HeroListService, Hero } from 'hero-data-access';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'lib-hero-list',
@@ -27,7 +33,9 @@ import { HeroListService, Hero } from 'hero-data-access';
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
+    NgOptimizedImage,
   ],
+  providers: [provideImgixLoader(URL_BASE_IMAGES)],
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.scss'],
 })
@@ -56,8 +64,17 @@ export class HeroListComponent implements OnInit, AfterViewInit {
   private loadUsers() {
     this.heroListService
       .getAllHeroes()
-      .pipe(takeUntilDestroyed(this.destroyRef))
+      .pipe(
+        map((heroes) =>
+          heroes.map((hero) => ({
+            ...hero,
+            avatar: hero.name.slice('npc_dota_hero_'.length).concat('.png'),
+          }))
+        ),
+        takeUntilDestroyed(this.destroyRef)
+      )
       .subscribe((heroes: Hero[]) => {
+        console.table(heroes);
         this.dataSource.data = heroes;
       });
   }

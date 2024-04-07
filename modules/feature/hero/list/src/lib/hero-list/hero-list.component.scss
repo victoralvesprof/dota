@@ -11,7 +11,7 @@
   color: #823051;
 }
 
-.user-table {
+.hero-table {
   font-size: 1rem;
   width: 100%;
   .th-header {
@@ -20,9 +20,6 @@
     .mat-sort-header-arrow {
       color: var(--custom-color-font, white);
     }
-  }
-  .td-space {
-    padding: var(--custom-padding, 0px 0px);
   }
 }
 
@@ -64,4 +61,12 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+.img-round {
+  border-radius: 50% 50%;
+  margin: 0.5rem 0.5rem;
+}
+.img-full {
+  max-width: 85%;
 }

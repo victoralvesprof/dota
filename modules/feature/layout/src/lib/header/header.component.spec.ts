@@ -23,12 +23,12 @@ describe('HeaderComponent', () => {
     const header: HTMLHeadingElement =
       fixture.nativeElement.querySelector('header');
 
-    expect(header.textContent).toBe(component.title);
+    expect(header.textContent).toBe(component.titleHeader);
 
-    component.title = 'leagueoflegends';
+    component.titleHeader = 'leagueoflegends';
 
     fixture.detectChanges();
 
-    expect(header.textContent).toBe(component.title);
+    expect(header.textContent).toBe(component.titleHeader);
   });
 });

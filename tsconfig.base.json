@@ -17,6 +17,7 @@
     "paths": {
       "hero-data-access": ["modules/data-access/hero/src/index.ts"],
       "hero-list": ["modules/feature/hero/list/src/index.ts"],
+      "home": ["modules/feature/home/src/index.ts"],
       "layout": ["modules/feature/layout/src/index.ts"]
     }
   },

@@ -74,7 +74,6 @@ export class HeroListComponent implements OnInit, AfterViewInit {
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe((heroes: Hero[]) => {
-        console.table(heroes);
         this.dataSource.data = heroes;
       });
   }

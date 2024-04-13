@@ -2,11 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from 'layout';
-import { HeroListComponent } from 'hero-list';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, LayoutModule, HttpClientModule, HeroListComponent],
+  imports: [RouterModule, LayoutModule, HttpClientModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
